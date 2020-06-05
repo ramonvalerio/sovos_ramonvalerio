@@ -20,5 +20,13 @@ namespace sovos_ramonvalerio.core.Domain.Orders
             Id = Guid.NewGuid().ToString("D");
             Items = new List<Item>();
         }
+
+        public bool IsValid()
+        {
+            if (Items.Count >= 1)
+                return true;
+
+            return false;
+        }
     }
 }

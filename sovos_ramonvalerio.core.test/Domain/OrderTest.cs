@@ -10,8 +10,14 @@ namespace sovos_ramonvalerio.core.test.Domain
         }
 
         [Test]
-        public void Test1()
+        public void Order_Has_Items()
         {
+            //Arrange
+
+            //Act
+
+            //Assert
+
             Assert.Pass();
         }
     }
