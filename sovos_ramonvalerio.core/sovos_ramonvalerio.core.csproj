@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Customers\" />
+    <Folder Include="Application\Orders\" />
+    <Folder Include="Domain\Customers\" />
+    <Folder Include="Domain\Orders\" />
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
+
+</Project>
