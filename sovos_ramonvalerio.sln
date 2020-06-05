@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sovos_ramonvalerio.core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sovos_ramonvalerio.core.test", "sovos_ramonvalerio.core.test\sovos_ramonvalerio.core.test.csproj", "{28F4A5D5-A5D6-4ADC-A442-21418F040587}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sovos_ramonvalerio.api", "sovos_ramonvalerio.api\sovos_ramonvalerio.api.csproj", "{9982BC9B-77F1-49AB-A70B-46E5FAAABEC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{28F4A5D5-A5D6-4ADC-A442-21418F040587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F4A5D5-A5D6-4ADC-A442-21418F040587}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F4A5D5-A5D6-4ADC-A442-21418F040587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9982BC9B-77F1-49AB-A70B-46E5FAAABEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9982BC9B-77F1-49AB-A70B-46E5FAAABEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9982BC9B-77F1-49AB-A70B-46E5FAAABEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9982BC9B-77F1-49AB-A70B-46E5FAAABEC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

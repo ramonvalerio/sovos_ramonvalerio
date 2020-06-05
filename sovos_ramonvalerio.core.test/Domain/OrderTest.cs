@@ -3,7 +3,6 @@ using sovos_ramonvalerio.core.Domain.Customers;
 using sovos_ramonvalerio.core.Domain.Orders;
 using sovos_ramonvalerio.core.Infrastructure;
 using System;
-using System.Linq;
 
 namespace sovos_ramonvalerio.core.test.Domain
 {
