@@ -6,8 +6,6 @@ namespace sovos_ramonvalerio.core.Domain.Customers
 {
     public class Customer
     {
-        public string Id { get; private set; }
-
         public string Name { get; private set; }
 
         public string Email { get; private set; }
@@ -16,7 +14,6 @@ namespace sovos_ramonvalerio.core.Domain.Customers
 
         public Customer(string name, string email)
         {
-            Id = Guid.NewGuid().ToString("D");
             Name = name;
             Email = email;
         }

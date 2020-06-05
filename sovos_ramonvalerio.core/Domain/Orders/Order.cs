@@ -14,12 +14,12 @@ namespace sovos_ramonvalerio.core.Domain.Orders
 
         public List<Item> Items { get; private set; }
 
-        public string CustomerId { get; private set; }
+        public string CustomerEmail { get; private set; }
 
         public Order(Customer customer, string Description = null)
         {
             Id = Guid.NewGuid().ToString("D");
-            CustomerId = customer.Id;
+            CustomerEmail = customer.Email;
             CreatedDate = DateTime.Now;
             Items = new List<Item>();
         }

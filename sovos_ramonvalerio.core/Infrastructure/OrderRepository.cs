@@ -17,19 +17,19 @@ namespace sovos_ramonvalerio.core.Infrastructure
 
         public Order GetById(Customer customer, string orderId)
         {
-            if (!_orders.ContainsKey(customer.Id))
+            if (!_orders.ContainsKey(customer.Email))
                 return null;
 
-            var orders = _orders[customer.Id];
+            var orders = _orders[customer.Email];
             return orders.SingleOrDefault(x => x.Id == orderId);
         }
 
         public IEnumerable<Order> GetByCustomer(Customer customer)
         {
-            if (!_orders.ContainsKey(customer.Id))
+            if (!_orders.ContainsKey(customer.Email))
                 return new List<Order>();
 
-            return _orders[customer.Id];
+            return _orders[customer.Email];
         }
 
         public void Add(Order order)
@@ -37,13 +37,13 @@ namespace sovos_ramonvalerio.core.Infrastructure
             if (order.Items.Count < 1)
                 throw new Exception("It is not possible to add an order without items.");
 
-            if (!_orders.ContainsKey(order.CustomerId))
+            if (!_orders.ContainsKey(order.CustomerEmail))
             {
-                _orders.Add(order.CustomerId, new List<Order> { order });
+                _orders.Add(order.CustomerEmail, new List<Order> { order });
                 return;
             }
 
-            var orders = _orders[order.CustomerId];
+            var orders = _orders[order.CustomerEmail];
             orders.Add(order);
         }
     }
