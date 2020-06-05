@@ -32,7 +32,7 @@ namespace sovos_ramonvalerio.core.Infrastructure
             return _orders[customer.Id];
         }
 
-        public void AddOrder(Order order)
+        public void Add(Order order)
         {
             if (order.Items.Count < 1)
                 throw new Exception("It is not possible to add an order without items.");

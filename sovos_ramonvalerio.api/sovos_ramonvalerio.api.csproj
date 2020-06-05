@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\sovos_ramonvalerio.core\sovos_ramonvalerio.core.csproj" />
   </ItemGroup>
 

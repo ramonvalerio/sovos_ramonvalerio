@@ -10,6 +10,6 @@ namespace sovos_ramonvalerio.core.Infrastructure
 
         IEnumerable<Order> GetByCustomer(Customer customer);
 
-        void AddOrder(Order order);
+        void Add(Order order);
     }
 }

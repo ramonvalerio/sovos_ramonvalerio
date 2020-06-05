@@ -28,7 +28,7 @@ namespace sovos_ramonvalerio.core.test.Domain
             var order1 = new Order(customer);
             order1.AddItem(new Item());
             order1.AddItem(new Item());
-            _orderRepository.AddOrder(order1);
+            _orderRepository.Add(order1);
 
             //Act
             var expected = 2;
@@ -49,7 +49,7 @@ namespace sovos_ramonvalerio.core.test.Domain
             //Act
             try
             {
-                _orderRepository.AddOrder(order1);
+                _orderRepository.Add(order1);
             }
             catch (Exception ex)
             {

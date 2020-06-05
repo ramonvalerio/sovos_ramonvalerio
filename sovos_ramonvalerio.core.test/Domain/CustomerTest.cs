@@ -93,8 +93,8 @@ namespace sovos_ramonvalerio.core.test.Domain
             order2.AddItem(new Item());
 
             // Registering Orders 
-            _orderRepository.AddOrder(order1);
-            _orderRepository.AddOrder(order2);
+            _orderRepository.Add(order1);
+            _orderRepository.Add(order2);
 
             // Act
             var expected = 2;
