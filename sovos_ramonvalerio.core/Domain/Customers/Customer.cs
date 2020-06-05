@@ -8,15 +8,17 @@ namespace sovos_ramonvalerio.core.Domain.Customers
     {
         public string Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public string Email { get; set; }
+        public string Email { get; private set; }
 
-        public List<Order> Orders { get; set; }
+        public List<Order> Orders { get; private set; }
 
-        public Customer()
+        public Customer(string name, string email)
         {
             Id = Guid.NewGuid().ToString("D");
+            Name = name;
+            Email = email;
         }
 
         public bool IsValid()
