@@ -1,16 +1,10 @@
-﻿using sovos_ramonvalerio.core.Domain.Orders;
-using System;
-using System.Collections.Generic;
-
-namespace sovos_ramonvalerio.core.Domain.Customers
+﻿namespace sovos_ramonvalerio.core.Domain.Customers
 {
     public class Customer
     {
         public string Name { get; private set; }
 
         public string Email { get; private set; }
-
-        public List<Order> Orders { get; private set; }
 
         public Customer(string name, string email)
         {

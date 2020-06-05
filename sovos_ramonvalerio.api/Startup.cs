@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using sovos_ramonvalerio.core.Application.Customers;
 using sovos_ramonvalerio.core.Infrastructure;
 
 namespace sovos_ramonvalerio.api
@@ -21,6 +22,9 @@ namespace sovos_ramonvalerio.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Application
+            services.AddSingleton<ICustomerAppService, CustomerAppService>();
 
             // Infrastructure
             services.AddSingleton<IOrderRepository, OrderRepository>();

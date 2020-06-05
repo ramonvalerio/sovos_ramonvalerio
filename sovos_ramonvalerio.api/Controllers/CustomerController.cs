@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using sovos_ramonvalerio.core.Application.Customers;
 using sovos_ramonvalerio.core.Domain.Customers;
-using sovos_ramonvalerio.core.Infrastructure;
 
 namespace sovos_ramonvalerio.api.Controllers
 {
@@ -8,11 +8,11 @@ namespace sovos_ramonvalerio.api.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly ICustomerRepository _customerRepository;
+        private readonly ICustomerAppService _customerAppService;
 
-        public CustomerController(ICustomerRepository customerRepository)
+        public CustomerController(ICustomerAppService customerAppService)
         {
-            _customerRepository = customerRepository;
+            _customerAppService = customerAppService;
         }
 
         [HttpGet]
@@ -20,7 +20,7 @@ namespace sovos_ramonvalerio.api.Controllers
         {
             try
             {
-                return Ok(_customerRepository.GetAll());
+                return Ok(_customerAppService.Return_a_list_of_customers_without_orders());
             }
             catch (System.Exception ex)
             {
@@ -28,27 +28,12 @@ namespace sovos_ramonvalerio.api.Controllers
             }
         }
 
-        // GET api/<CustomerController>/5
-        [HttpGet("{id}")]
-        public IActionResult Get(string email)
-        {
-            try
-            {
-                return Ok(_customerRepository.GetByEmail(email));
-            }
-            catch (System.Exception ex)
-            {
-                return Problem(ex.Message);
-            }
-        }
-
-        // POST api/<CustomerController>
         [HttpPost]
-        public IActionResult Post([FromBody] Customer customer)
+        public IActionResult Post([FromBody] CustomerCommand command)
         {
             try
             {
-                _customerRepository.Add(customer);
+                var customer = new Customer(command.Name, command.Email);
                 return Ok("Customer added with success.");
             }
             catch (System.Exception ex)
