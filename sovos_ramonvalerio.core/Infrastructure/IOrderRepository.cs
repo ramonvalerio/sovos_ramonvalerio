@@ -6,8 +6,10 @@ namespace sovos_ramonvalerio.core.Infrastructure
 {
     public interface IOrderRepository
     {
+        Order GetById(Customer customer, string orderId);
+
         IEnumerable<Order> GetByCustomer(Customer customer);
 
-        void AddOrderByCustomer(Customer customer, Order order);
+        void AddOrder(Order order);
     }
 }
