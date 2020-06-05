@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace sovos_ramonvalerio.core.Application.Orders
+namespace sovos_ramonvalerio.core.Domain.Orders
 {
     public class Order
     {

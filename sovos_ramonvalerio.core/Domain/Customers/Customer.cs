@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace sovos_ramonvalerio.core.Application.Customers
+namespace sovos_ramonvalerio.core.Domain.Customers
 {
     public class Customer
     {

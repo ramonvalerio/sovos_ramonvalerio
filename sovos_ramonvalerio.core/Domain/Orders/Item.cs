@@ -1,4 +1,4 @@
-﻿namespace sovos_ramonvalerio.core.Application.Orders
+﻿namespace sovos_ramonvalerio.core.Domain.Orders
 {
     public class Item
     {
