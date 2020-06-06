@@ -35,9 +35,22 @@ namespace sovos_ramonvalerio.core.Application.Orders
         public void Add_a_new_Order_and_Order_Item_for_an_existing_Customer(OrderCommand command)
         {
             var customer = _customerRepository.GetByEmail(command.CustomerEmail);
+
+            if (customer == null)
+                throw new Exception("Email's Customer invalid or not exist.");
+
             var order = new Order(customer);
 
-            _orderRepository.Add(order);
+            foreach (var item in command.Items)
+                order.AddItem(item);
+
+            if (order.IsValid())
+            {
+                _orderRepository.Add(order);
+                return;
+            }
+
+            throw new Exception("Invalid Order, should have at least 1 Item added.");
         }
     }
 }
