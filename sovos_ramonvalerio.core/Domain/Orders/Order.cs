@@ -31,10 +31,13 @@ namespace sovos_ramonvalerio.core.Domain.Orders
 
         public bool IsValid()
         {
-            if (Items.Count >= 1)
-                return true;
+            if (Items.Count < 1)
+                return false;
 
-            return false;
+            if (string.IsNullOrWhiteSpace(CustomerEmail))
+                return false;
+
+            return true;
         }
     }
 }
