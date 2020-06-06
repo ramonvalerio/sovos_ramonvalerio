@@ -108,7 +108,7 @@ namespace sovos_ramonvalerio.core.test.Domain
         public void Customer_has_no_Orders()
         {
             // Arrange
-            var customer = new Customer("Customer test1", "customertest1@test.com");
+            var customer = new Customer("Customer test1", "teste@test.com");
 
             // Act
             var expected = 0;
