@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using sovos_ramonvalerio.core.Application.Orders;
 
 namespace sovos_ramonvalerio.api.Controllers
 {
@@ -7,25 +7,38 @@ namespace sovos_ramonvalerio.api.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        // GET: api/<OrderController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IOrderAppService _orderAppService;
+
+        public OrderController(IOrderAppService orderAppService)
         {
-            return new string[] { "Order 1", "Order 2" };
+            _orderAppService = orderAppService;
         }
 
-        // GET api/<OrderController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{email}")]
+        public IActionResult Get(string email)
         {
-            return "Order 1";
+            try
+            {
+                return Ok(_orderAppService.Return_a_customer_and_his_orders(email));
+            }
+            catch (System.Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
-        // POST api/<OrderController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] OrderCommand command)
         {
-
+            try
+            {
+                _orderAppService.Add_a_new_Order_and_Order_Item_for_an_existing_Customer(command);
+                return Ok("Customer added with success.");
+            }
+            catch (System.Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
     }
 }

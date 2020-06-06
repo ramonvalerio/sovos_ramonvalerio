@@ -33,7 +33,7 @@ namespace sovos_ramonvalerio.api.Controllers
         {
             try
             {
-                var customer = new Customer(command.Name, command.Email);
+                _customerAppService.Add_a_new_Customer(command);
                 return Ok("Customer added with success.");
             }
             catch (System.Exception ex)

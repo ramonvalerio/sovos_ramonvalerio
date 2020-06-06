@@ -1,4 +1,5 @@
 ﻿using sovos_ramonvalerio.core.Domain.Customers;
+using System;
 using System.Collections.Generic;
 
 namespace sovos_ramonvalerio.core.Infrastructure
@@ -33,7 +34,7 @@ namespace sovos_ramonvalerio.core.Infrastructure
                 return;
             }
 
-            _customers.Add(customer.Email, customer);
+            throw new Exception("This Email's Customer already exist.");
         }
     }
 }

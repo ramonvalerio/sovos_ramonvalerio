@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using sovos_ramonvalerio.core.Application.Customers;
+using sovos_ramonvalerio.core.Application.Orders;
 using sovos_ramonvalerio.core.Infrastructure;
 
 namespace sovos_ramonvalerio.api
@@ -24,11 +25,12 @@ namespace sovos_ramonvalerio.api
             services.AddControllers();
 
             // Application
-            services.AddSingleton<ICustomerAppService, CustomerAppService>();
+            services.AddTransient<ICustomerAppService, CustomerAppService>();
+            services.AddTransient<IOrderAppService, OrderAppService>();
 
             // Infrastructure
-            services.AddSingleton<IOrderRepository, OrderRepository>();
             services.AddSingleton<ICustomerRepository, CustomerRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             services.AddSwaggerGen(c =>
             {
